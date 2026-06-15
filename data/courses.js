@@ -200,16 +200,16 @@ const LNL_COURSES = [
 /* 2b. FREE COURSES — full YouTube playlists (open & free)             */
 /* ------------------------------------------------------------------ */
 const LNL_FREE_COURSES = [
-  { title: "C Programming",            cat: "Programming",   thumb: "assets/img/free-c.svg",       url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6o42wWTvMZZpwSAgxsQR5V" },
-  { title: "Object-Oriented Programming", cat: "Programming", thumb: "assets/img/free-oop.svg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6tsu_i2BOE1g-MeVxos7PZ" },
-  { title: "Digital Logic Design",     cat: "CS Core",       thumb: "assets/img/free-dld.svg",     url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z4CwKE_OY6GA8kk3z8ThRbA" },
-  { title: "Database Management System", cat: "CS Core",     thumb: "assets/img/free-dbms.svg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6RZ6sVm-SB1ZXY1mhilspY" },
-  { title: "Data Structure",           cat: "CS Core",       thumb: "assets/img/free-ds.svg",      url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6Y9h2A5hfLKz-UtGrkEg0Z" },
-  { title: "Introduction to Data Science", cat: "AI & Data", thumb: "assets/img/free-datasci.svg", url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z4j8fCZd7x0MWL08pitnH4Q" },
-  { title: "Physics 101",              cat: "Science",       thumb: "assets/img/free-phy1.svg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z4wFFpXCW6vbegJxBcaYz-n" },
-  { title: "Physics 102",              cat: "Science",       thumb: "assets/img/free-phy2.svg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6V0_URcjkELL-J-8GZTjfJ" },
-  { title: "MAT-101",                  cat: "Mathematics",   thumb: "assets/img/free-mat1.svg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z7SXZs3nEjDrcNaxXbf5eEu" },
-  { title: "MAT-102",                  cat: "Mathematics",   thumb: "assets/img/free-mat2.svg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z7a-pM3YV38JP5f5U1rofBw" },
+  { title: "C Programming",            cat: "Programming",   thumb: "https://i.ytimg.com/vi/FVwLNzYeo7w/hqdefault.jpg",       url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6o42wWTvMZZpwSAgxsQR5V" },
+  { title: "Object-Oriented Programming", cat: "Programming", thumb: "https://i.ytimg.com/vi/4tVB2qWTQGk/hqdefault.jpg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6tsu_i2BOE1g-MeVxos7PZ" },
+  { title: "Digital Logic Design",     cat: "CS Core",       thumb: "https://i.ytimg.com/vi/CDhHeGsIcvM/hqdefault.jpg",     url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z4CwKE_OY6GA8kk3z8ThRbA" },
+  { title: "Database Management System", cat: "CS Core",     thumb: "https://i.ytimg.com/vi/e0FKggG0gu4/hqdefault.jpg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6RZ6sVm-SB1ZXY1mhilspY" },
+  { title: "Data Structure",           cat: "CS Core",       thumb: "https://i.ytimg.com/vi/UVCAEKWIsQk/hqdefault.jpg",      url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6Y9h2A5hfLKz-UtGrkEg0Z" },
+  { title: "Introduction to Data Science", cat: "AI & Data", thumb: "https://i.ytimg.com/vi/74GKhKA-1fo/hqdefault.jpg", url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z4j8fCZd7x0MWL08pitnH4Q" },
+  { title: "Physics 101",              cat: "Science",       thumb: "https://i.ytimg.com/vi/0q5sV8LKQek/hqdefault.jpg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z4wFFpXCW6vbegJxBcaYz-n" },
+  { title: "Physics 102",              cat: "Science",       thumb: "https://i.ytimg.com/vi/NuRUwM33Imc/hqdefault.jpg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6V0_URcjkELL-J-8GZTjfJ" },
+  { title: "MAT-101",                  cat: "Mathematics",   thumb: "https://i.ytimg.com/vi/UC1MtEKBrkM/hqdefault.jpg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z7SXZs3nEjDrcNaxXbf5eEu" },
+  { title: "MAT-102",                  cat: "Mathematics",   thumb: "https://i.ytimg.com/vi/V8y7PuYOCdo/hqdefault.jpg",    url: "https://www.youtube.com/playlist?list=PL66eeXZhO4z7a-pM3YV38JP5f5U1rofBw" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -238,10 +238,10 @@ const LNL_TESTIMONIALS = [
 /* 5. FEATURED YOUTUBE COURSES (shown in the YouTube promo strip)      */
 /* ------------------------------------------------------------------ */
 const LNL_VIDEOS = [
-  { thumb: "assets/img/free-c.svg",      title: "C Programming — Full Course",        views: "Free playlist", href: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6o42wWTvMZZpwSAgxsQR5V" },
-  { thumb: "assets/img/free-ds.svg",     title: "Data Structure — Full Course",        views: "Free playlist", href: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6Y9h2A5hfLKz-UtGrkEg0Z" },
-  { thumb: "assets/img/free-dbms.svg",   title: "Database Management System",          views: "Free playlist", href: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6RZ6sVm-SB1ZXY1mhilspY" },
-  { thumb: "assets/img/free-datasci.svg", title: "Introduction to Data Science",       views: "Free playlist", href: "https://www.youtube.com/playlist?list=PL66eeXZhO4z4j8fCZd7x0MWL08pitnH4Q" },
+  { thumb: "https://i.ytimg.com/vi/FVwLNzYeo7w/hqdefault.jpg",      title: "C Programming — Full Course",        views: "Free playlist", href: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6o42wWTvMZZpwSAgxsQR5V" },
+  { thumb: "https://i.ytimg.com/vi/UVCAEKWIsQk/hqdefault.jpg",     title: "Data Structure — Full Course",        views: "Free playlist", href: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6Y9h2A5hfLKz-UtGrkEg0Z" },
+  { thumb: "https://i.ytimg.com/vi/e0FKggG0gu4/hqdefault.jpg",   title: "Database Management System",          views: "Free playlist", href: "https://www.youtube.com/playlist?list=PL66eeXZhO4z6RZ6sVm-SB1ZXY1mhilspY" },
+  { thumb: "https://i.ytimg.com/vi/74GKhKA-1fo/hqdefault.jpg", title: "Introduction to Data Science",       views: "Free playlist", href: "https://www.youtube.com/playlist?list=PL66eeXZhO4z4j8fCZd7x0MWL08pitnH4Q" },
 ];
 
 /* ------------------------------------------------------------------ */
