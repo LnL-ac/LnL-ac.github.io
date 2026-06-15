@@ -105,7 +105,7 @@
       `<button class="pill ${i === 0 ? "active" : ""}" data-fcat="${esc(c)}">${esc(c)}</button>`).join("");
     $("#free-grid").innerHTML = LNL_FREE_COURSES.map((c, i) => `
       <a class="free-card" href="${c.url}" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="${(i % 4) * 50}" data-fcat="${esc(c.cat)}">
-        <div class="free-thumb"><img src="${c.thumb}" alt="${esc(c.title)} free course" loading="lazy" /><span class="free-badge">FREE</span></div>
+        <div class="free-thumb"><img src="${c.thumb}" alt="${esc(c.title)} free course" loading="lazy" /><span class="free-badge">FREE</span><span class="play-ic"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></div>
         <div class="free-body">
           <span class="free-cat">${esc(c.cat)}</span>
           <h3>${esc(c.title)}</h3>
@@ -142,7 +142,7 @@
   function renderVideos() {
     $("#yt-grid").innerHTML = LNL_VIDEOS.map((v) => `
       <a class="yt-video" href="${v.href}" target="_blank" rel="noopener">
-        <img src="${v.thumb}" alt="${esc(v.title)}" loading="lazy" />
+        <div class="yt-thumb"><img src="${v.thumb}" alt="${esc(v.title)}" loading="lazy" /><span class="play-ic"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></div>
         <div class="yt-title">${esc(v.title)}<div class="yt-views">${esc(v.views)}</div></div>
       </a>`).join("");
     $("#yt-subscribe").href = LNL_CONFIG.youtube.url;
