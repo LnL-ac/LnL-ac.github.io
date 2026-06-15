@@ -402,22 +402,68 @@
     top.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 
-  // Forms (no backend — friendly confirmation)
+  // Forms — submit to Web3Forms (no backend) + deliver the roadmap PDF
   function initForms() {
-    function handle(form, note, msg) {
-      form.addEventListener("submit", (e) => {
+    const ROADMAP = LNL_CONFIG.roadmapUrl || "assets/loop-and-logic-roadmap.pdf";
+    const KEY = (LNL_CONFIG.web3formsKey || "").trim();
+    const keyReady = KEY && !/YOUR_|PASTE/i.test(KEY);
+
+    async function sendToWeb3(form, subject) {
+      const fd = new FormData(form);
+      fd.append("access_key", KEY);
+      fd.append("subject", subject);
+      fd.append("from_name", "Loop & Logic Website");
+      const r = await fetch("https://api.web3forms.com/submit", { method: "POST", body: fd });
+      return r.json();
+    }
+
+    function wire(form, note, opts) {
+      if (!form || !note) return;
+      const btn = form.querySelector('button[type="submit"], button:not([type])');
+      const label = btn ? btn.innerHTML : "";
+      form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const inputs = $$("input[required]", form);
+        const reqs = $$("input[required]", form);
         let ok = true;
-        inputs.forEach((i) => { const valid = i.checkValidity(); i.classList.toggle("invalid", !valid); if (!valid) ok = false; });
+        reqs.forEach((i) => { const v = i.checkValidity(); i.classList.toggle("invalid", !v); if (!v) ok = false; });
         if (!ok) { note.textContent = "Please fill in all fields correctly."; note.className = "form-note err"; return; }
-        note.textContent = msg; note.className = "form-note ok"; form.reset();
+        if (btn) { btn.disabled = true; btn.innerHTML = "Sending…"; }
+        try {
+          if (keyReady) {
+            const data = await sendToWeb3(form, opts.subject);
+            if (!data.success) throw new Error(data.message || "submit failed");
+          }
+          let msg = opts.success;
+          if (opts.roadmap) {
+            msg += ' <a href="' + ROADMAP + '" target="_blank" rel="noopener" style="text-decoration:underline">Download your roadmap →</a>';
+            window.open(ROADMAP, "_blank", "noopener");
+          }
+          note.innerHTML = msg; note.className = "form-note ok";
+          form.reset();
+          if (opts.closePopup) setTimeout(closePopup, 3000);
+        } catch (err) {
+          note.textContent = "Sorry, that didn't go through. Please try again or email loopnlogic.ai@gmail.com.";
+          note.className = "form-note err";
+        } finally {
+          if (btn) { btn.disabled = false; btn.innerHTML = label; }
+        }
       });
     }
-    handle($("#lead-form"), $("#lead-note"), "🎉 Thanks! Check your email for your free resources.");
-    handle($("#newsletter-form"), $("#news-note"), "✅ Subscribed! You're on the list.");
+
+    wire($("#lead-form"), $("#lead-note"),
+      { subject: "New lead — Free Resources (LNL site)", success: "🎉 Thanks! Your free roadmap is on its way.", roadmap: true });
+    wire($("#newsletter-form"), $("#news-note"),
+      { subject: "New newsletter signup (LNL site)", success: "✅ Subscribed! You're on the list." });
+
+    // popup form has no note element in the HTML — create one
     const pf = $("#popup-form");
-    pf && pf.addEventListener("submit", (e) => { e.preventDefault(); pf.innerHTML = '<p class="form-note ok" style="text-align:center">🎉 Sent! Check your inbox.</p>'; setTimeout(closePopup, 1600); });
+    if (pf && !$("#popup-note")) {
+      const n = document.createElement("p");
+      n.id = "popup-note"; n.className = "form-note"; n.setAttribute("role", "status");
+      pf.appendChild(n);
+    }
+    wire(pf, $("#popup-note"),
+      { subject: "New lead — Exit popup (LNL site)", success: "🎉 Sent! Your roadmap is opening.", roadmap: true, closePopup: true });
   }
 
   // Popup: newsletter (timed) + exit intent — shows once per session
