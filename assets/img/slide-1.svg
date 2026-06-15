@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420">
+<defs><linearGradient id="s" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+<pattern id="d" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#fff" opacity="0.12"/></pattern></defs>
+<rect width="1100" height="420" fill="url(#s)"/><rect width="1100" height="420" fill="url(#d)"/>
+<circle cx="940" cy="120" r="150" fill="#fff" opacity="0.10"/>
+<text x="60" y="180" font-family="Poppins, Arial" font-size="52" font-weight="800" fill="#fff">New Batch: Python for AI</text>
+<text x="60" y="235" font-family="Inter, Arial" font-size="26" fill="#fff" opacity="0.9">Starts July 1 · Limited seats</text>
+</svg>
