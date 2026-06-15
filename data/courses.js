@@ -30,6 +30,12 @@ const LNL_CONFIG = {
   },
   // Course registration Google Form — used by every "Enroll / Register" button
   enrollUrl: "https://docs.google.com/forms/d/e/1FAIpQLSetPgjuid00P9Lhiv1z-gcURMq7DRllYca5Rq0JD-Ca2ch5TQ/viewform",
+
+  // Lead capture — emails are sent to your inbox via Web3Forms (free, no backend).
+  // Get your free key at https://web3forms.com (enter loopnlogic.ai@gmail.com), then paste it below.
+  web3formsKey: "YOUR_WEB3FORMS_ACCESS_KEY",
+  // Free roadmap PDF delivered to people who sign up (popup + Free Resources form).
+  roadmapUrl: "assets/loop-and-logic-roadmap.pdf",
 };
 
 /* ------------------------------------------------------------------ */
